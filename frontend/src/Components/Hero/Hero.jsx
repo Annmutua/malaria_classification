@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="hero-text">
             <h1>Fast Diagnosis. Effective Treatment!</h1>
             <p> </p>
-            <Link to='/model'  smooth={true} offset={-260} duration={500}  className="btn" >Get Started Today <img src={dark_arrow} alt="" /></Link>
+            <Link to='/model'  smooth={true} offset={-260} duration={500}  className="btn" >Log in to Get Started<img src={dark_arrow} alt="" /></Link>
         </div>
       
     </div>

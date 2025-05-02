@@ -46,6 +46,13 @@
   }
   
   
-
-
+  .logout {
+    color: red;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .logout:hover {
+    text-decoration: underline;
+  }
   

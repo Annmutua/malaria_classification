@@ -36,22 +36,35 @@ const Model = () => {
       alert("Please upload an image first.");
       return;
     }
-
+  
     const formData = new FormData();
     formData.append("file", selectedFile);
-
+  
+    const token = localStorage.getItem("token"); // get token from localStorage
+  
     try {
       const response = await fetch("https://annmutua-malaria-detection.hf.space/predict", {
         method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         body: formData,
       });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || "Prediction failed");
+      }
+  
       const data = await response.json();
       navigate("/result", { state: data });
-
+  
     } catch (error) {
-      console.error("Error making prediction:", error);
+      console.error("Error making prediction:", error.message);
+      alert("Prediction failed: " + error.message);
     }
   };
+  
 
   const [mobileMenu, setMobileMenu] = useState(false)
   const toggleMenu = () =>{
