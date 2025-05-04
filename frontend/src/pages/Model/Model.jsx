@@ -96,7 +96,7 @@ const Model = () => {
         <input type="file" accept="image/*" onChange={handleFileChange} className="upload-btn" />
       </div>
 
-      <button className="model_button" onClick={handleSubmit}>Predict</button>
+      <button className="model_button" onClick={handleSubmit}>Detect</button>
     </div>
     </div>
   );
